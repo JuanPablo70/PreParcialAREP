@@ -1,0 +1,27 @@
+version: '2'
+
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: web
+    ports:
+      - "4567:6000"
+
+  math1:
+    build:
+      context: .
+      dockerfile: DockerfileMathService
+    container_name: MathService1
+    ports:
+      - "5000:6000"
+
+  math2:
+    build:
+      context: .
+      dockerfile: DockerfileMathService
+    container_name: MathService2
+    ports:
+      - "5001:6000"
